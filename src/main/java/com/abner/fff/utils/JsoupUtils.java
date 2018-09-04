@@ -15,8 +15,9 @@ public class JsoupUtils {
             return Jsoup.connect(url).userAgent(UA_PC).timeout(TIME_OUT).ignoreContentType(true).get();
         } catch (IOException e) {
             System.out.print(ERROR_DESC + url);
-            throw new AnyException(ERROR_DESC + url);
 //            throw new AnyException(ERROR_DESC + url);
+//            throw new AnyException(ERROR_DESC + url);
+            return null;
         }
     }
 }
