@@ -23,10 +23,20 @@ public class EyepetizerCrawler {
 
     @Autowired
     private EyepetizerService eyepetizerService;
-    @Scheduled(fixedRate = 6000*6000*12)
+//    @Scheduled(fixedRate = 6000*6000*12)
     private void start(){
         System.out.println("EyepetizerCrawler start");
 //        System.out.println(
+        getIndexTabs();
+//        saveNewsToRedis(mPage);
+//        mPage++;
+    }
+
+    /**
+     * 获取开眼的主页数据
+     */
+    private void getIndexTabs()
+    {
         EyeIndexTabsResp eyeIndexTabsResp = eyepetizerService.getIndexTabs("http://baobab.kaiyanapp.com/api/v4/tabs/selected");
         for (EyeIndexTabsResp.ItemListBean item:eyeIndexTabsResp.getItemList())
         {
@@ -44,8 +54,6 @@ public class EyepetizerCrawler {
             }
         }
         redisManager.saveVideos(RedisManager.HOT_KEY+"_"+TAG,videos);
-//        saveNewsToRedis(mPage);
-//        mPage++;
     }
 
 }

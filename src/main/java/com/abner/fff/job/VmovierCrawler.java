@@ -28,7 +28,7 @@ public class VmovierCrawler {
     private RedisManager redisManager;
 
 
-    @Scheduled(fixedRate = 6000*6000*12)
+//    @Scheduled(fixedRate = 6000*6000*12)
     private void start(){
         System.out.println("VmovierCrawler start"+mPage);
         saveNewsToRedis(mPage);
@@ -40,7 +40,7 @@ public class VmovierCrawler {
 
     /**
      * 爬取场库最新的视频
-     * @param page
+     * @param page 分页数
      */
     private void saveNewsToRedis(int page)
     {
