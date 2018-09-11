@@ -2,6 +2,7 @@ package com.abner.fff.controller;
 
 import com.abner.fff.bean.Video;
 import com.abner.fff.utils.RedisManager;
+import com.abner.fff.utils.Result;
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -22,6 +23,7 @@ public class VideoController {
 
     private final String EYE_TAG = "Eyepetizer";
     private final String V_TAG = "Vmovier";
+    private final String X_TAG = "XingPianChang";
 
     @Autowired
     private RedisManager redisManager;
@@ -30,15 +32,17 @@ public class VideoController {
             response = List.class, tags = {"Rule Cateory" })
     @ApiImplicitParam(name = "tag",value = "video的平台",required = true)
     @RequestMapping(value = "/getVideosByTag", method = RequestMethod.GET)
-    public List<Video> getIndexTabs(
+    public Result<List<Video>> getIndexTabs(
             @RequestParam(name = "tag") String tag) {
 //        return "123";
         System.out.println(tag);
         if (EYE_TAG.equals(tag))
-            return redisManager.getVideosByKeyAndTag(RedisManager.HOT_KEY, EYE_TAG);
+            return Result.ok(redisManager.getVideosByKeyAndTag(RedisManager.HOT_KEY, EYE_TAG));
         else if (V_TAG.equals(tag))
-            return redisManager.getVideosByKeyAndTag(RedisManager.HOT_KEY, V_TAG);
+            return Result.ok(redisManager.getVideosByKeyAndTag(RedisManager.HOT_KEY, V_TAG));
+        else if (X_TAG.equals(tag))
+            return Result.ok(redisManager.getVideosByKeyAndTag(RedisManager.HOT_KEY,X_TAG));
         else
-            return null;
+            return Result.error(null,"");
     }
 }
