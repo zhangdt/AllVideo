@@ -1,0 +1,45 @@
+/* font & color */
+.fw_300{font-weight: 300;}
+.fw_600{font-weight: 600;}
+.fs_10{font-size: 10px;}
+.fs_12{font-size: 12px;}
+.fs_13{font-size: 13px;}
+.fs_14{font-size: 14px;}
+.fs_16{font-size: 16px;}
+.fs_18{font-size: 18px;}
+.fs_20{font-size: 20px;}
+.fs_24{font-size: 24px;}
+.fs_26{font-size: 26px;}
+.fs_28{font-size: 28px;}
+.fs_30{font-size: 30px;}
+.c_b_0{color: #000000;}
+.c_b_3{color: #333333;}
+.c_b_6{color: #666666;}
+.c_b_9{color: #999999;}
+.c_b_26{color: #262626;}
+.c_b_53{color: #535353;}
+.c_b_2{color: #222222;}
+.c_b_s_1{color: #33343b;}
+
+.c_r_1{color: #e74b3b; font-weight: 600;}
+.c_r_2{color: #b83c2f;}
+
+.c_w_f{color: #ffffff;}
+.c_w_f8{color: #f8f8f8;}
+.c_w_f0{color: #f0f0f0;}
+.c_w_87{color: #878787;}
+
+.c_g{color: #28ca42;}
+
+.c_b{color: #3890e9;}
+
+
+.line-hide-2{-webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;}
+.line-hide-3{-webkit-line-clamp: 3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;}
+.line-hide-6{-webkit-line-clamp: 6; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical;}
+
+
+blockquote, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
